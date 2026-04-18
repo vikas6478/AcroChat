@@ -2,7 +2,9 @@ import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react'
 import { io } from "socket.io-client";
-const socket = io(import.meta.env.VITE_CLIENT_API);
+const socket = io(import.meta.env.VITE_CLIENT_API, {
+  transports: ["websocket"],
+});
 import "./css/chat.css"
 
 const App = () => {
